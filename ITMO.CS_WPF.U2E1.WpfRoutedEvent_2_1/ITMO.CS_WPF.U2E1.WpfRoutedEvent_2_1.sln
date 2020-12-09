@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITMO.CS_WPF.U2E1.WpfRoutedEvent_2_1", "ITMO.CS_WPF.U2E1.WpfRoutedEvent_2_1.csproj", "{12C1A9AC-045D-40AB-8037-5EEB3F681E78}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{12C1A9AC-045D-40AB-8037-5EEB3F681E78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12C1A9AC-045D-40AB-8037-5EEB3F681E78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12C1A9AC-045D-40AB-8037-5EEB3F681E78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12C1A9AC-045D-40AB-8037-5EEB3F681E78}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D4788CF7-1202-44DF-A54A-D150D40C94B4}
+	EndGlobalSection
+EndGlobal
