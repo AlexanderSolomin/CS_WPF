@@ -1,0 +1,76 @@
+﻿<Window x:Class="WpfAppCalc.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAppCalc"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="309.811" Width="327.129">
+    <Window.Resources>
+        <SolidColorBrush x:Key="MyBrush" Color="Gold"/>
+        <Style TargetType="TextBox" x:Key="PageBackground">
+            <Setter Property="Foreground" Value="Blue"/>
+            <Setter Property="FontSize" Value="16"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="Blue"/>
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="Foreground" Value="{StaticResource MyBrush}"/>
+            <Setter Property="FontFamily" Value="Trebuchet MS"/>
+            <Setter Property="Margin" Value="2"/>
+        </Style>
+    </Window.Resources>
+    <Viewbox Stretch="Fill" Margin="1">
+
+        <Grid Height="300" Width="300">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50*" />
+                <RowDefinition Height="50*" />
+                <RowDefinition Height="76*" />
+                <RowDefinition Height="76*" />
+                <RowDefinition Height="76*" />
+            </Grid.RowDefinitions>
+
+
+            <TextBox Style="{StaticResource PageBackground}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="6" HorizontalContentAlignment="Right" FontSize="20"></TextBox>
+
+            <Button Margin="5, 5, 5, 5" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">Date</Button>
+            <Button Margin="5, 5, 5, 5" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2">C</Button>
+            <Button Margin="5, 5, 5, 5" Grid.Row="1" Grid.Column="4" Grid.ColumnSpan="2">Exit</Button>
+
+            <Button Grid.Row="4" Grid.Column="0">1</Button>
+            <Button Grid.Row="4" Grid.Column="1">2</Button>
+            <Button Grid.Row="4" Grid.Column="2">3</Button>
+            <Button Grid.Row="3" Grid.Column="0">4</Button>
+            <Button Grid.Row="3" Grid.Column="1">5</Button>
+            <Button Grid.Row="3" Grid.Column="2">6</Button>
+            <Button Grid.Row="2" Grid.Column="0">7</Button>
+            <Button Grid.Row="2" Grid.Column="1">8</Button>
+            <Button Grid.Row="2" Grid.Column="2">9</Button>
+            <Button Grid.Row="2" Grid.Column="3">0</Button>
+            <Button Grid.Row="3" Grid.Column="3">.</Button>
+            <Button Grid.Row="4" Grid.Column="3">+-</Button>
+            <Button Grid.Row="2" Grid.Column="4">/</Button>
+            <Button Grid.Row="3" Grid.Column="4">+</Button>
+            <Button Grid.Row="4" Grid.Column="4">-</Button>
+            <Button Grid.Row="2" Grid.Column="5">*</Button>
+            <Button Grid.Row="3" Grid.Column="5" Grid.RowSpan="2">=</Button>
+
+        </Grid>
+    </Viewbox>
+
+
+
+</Window>
+<!--<Viewbox Grid.Row="4" Grid.Column="0" Margin="5" Stretch="Uniform">
+    <Button>1</Button>
+</Viewbox>-->
