@@ -17,7 +17,7 @@ using System.Threading;
 
 namespace ITMO.CS_WPF.U5E1.BackgroundWorker
 {
-    
+
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
@@ -25,25 +25,32 @@ namespace ITMO.CS_WPF.U5E1.BackgroundWorker
     {
         private delegate void UpdateDelegate(int i);
         System.ComponentModel.BackgroundWorker aWorker = new System.ComponentModel.BackgroundWorker();
+        System.ComponentModel.BackgroundWorker bWorker = new System.ComponentModel.BackgroundWorker();
         public MainWindow()
         {
             InitializeComponent();
             aWorker.WorkerSupportsCancellation = true;
-            aWorker.DoWork += aWorker_DoWork;
-            aWorker.RunWorkerCompleted += aWorker_RunWorkerCompleted;
+            aWorker.DoWork += Worker_DoWork;
+            aWorker.RunWorkerCompleted += Worker_RunWorkerCompleted;
+
+            bWorker.WorkerSupportsCancellation = true;
+            bWorker.DoWork += Worker_DoWork;
+            bWorker.RunWorkerCompleted += Worker_RunWorkerCompleted;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             aWorker.RunWorkerAsync();
+            
         }
-        private void aWorker_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
+        private void Worker_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
         {
+            System.ComponentModel.BackgroundWorker worker = (System.ComponentModel.BackgroundWorker)sender;
             for (int i = 0; i <= 50; i++)
             {
                 for (int j = 1; j <= 10000000; j++)
                 { }
-                if (aWorker.CancellationPending)
+                if (worker.CancellationPending)
                 {
                     e.Cancel = true;
                     return;
@@ -52,14 +59,16 @@ namespace ITMO.CS_WPF.U5E1.BackgroundWorker
                 label1.Dispatcher.BeginInvoke(System.Windows.Threading.DispatcherPriority.Normal, update, i);
             }
         }
-        private void aWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+
+        private void Worker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
+            System.ComponentModel.BackgroundWorker worker = (System.ComponentModel.BackgroundWorker)sender;
             if (!(e.Cancelled))
                 label2.Content = "Run Completed";
             else
                 label2.Content = "Run Cancelled";
         }
-        
+
         private void UpdateLabel(int i)
         {
             label1.Content = "Cycles: " + i.ToString();
@@ -68,6 +77,15 @@ namespace ITMO.CS_WPF.U5E1.BackgroundWorker
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             aWorker.CancelAsync();
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            bWorker.RunWorkerAsync();
+        }
+        void Test()
+        {
+
         }
     }
 }

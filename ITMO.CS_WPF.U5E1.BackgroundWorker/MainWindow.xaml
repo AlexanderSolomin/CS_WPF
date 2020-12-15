@@ -11,6 +11,8 @@
         <Button Content="Cancel" HorizontalAlignment="Left" Margin="242,156,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
         <Label Name="label1" Content="Cycles" HorizontalAlignment="Left" Margin="165,113,0,0" VerticalAlignment="Top"/>
         <Label Name="label2" HorizontalAlignment="Left" Margin="165,153,0,0" VerticalAlignment="Top"/>
+        <Button Content="Start2" HorizontalAlignment="Left" Margin="242,58,0,0" VerticalAlignment="Top" Width="75" Height="28" Click="Button_Click_2"/>
+        <Label Name="label3"  HorizontalAlignment="Left" Margin="165,59,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>
