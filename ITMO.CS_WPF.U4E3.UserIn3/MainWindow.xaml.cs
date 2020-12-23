@@ -23,10 +23,10 @@ namespace ITMO.CS_WPF.U4E3.UserIn3
         public MainWindow()
         {
             InitializeComponent();
-            foreach (FontFamily F in Fonts.SystemFontFamilies)
-            {
-                comboBox1.Items.Add(F.ToString());
-            }
+            //foreach (FontFamily F in Fonts.SystemFontFamilies)
+            //{
+            //    comboBox1.Items.Add(F.ToString());
+            //}
             foreach (FontFamily F in Fonts.SystemFontFamilies)
             {
                 listBox1.Items.Add(F);
